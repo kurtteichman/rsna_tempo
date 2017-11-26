@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://127.0.0.1:5000/new/zero/#/?accession=1&institution=cornell -->
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="zeroApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}</style> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="./zero_files/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./zero_files/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="./zero_files/select2.css">
+	<link rel="stylesheet" type="text/css" href="./zero_files/select2-bootstrap.css">
+    <link href="http://127.0.0.1:5000/static/zeroApp/css/font-awesome.min.css" rel="stylesheet">
+	<style>
+		.selected {
+			border-width: 1px;
+			border-style: solid;
+			border-color: #5cb85c;
+			border-radius: 5px;
+		}
+	</style>
+	 <!--[if lte IE 9]>
+	 <script type="text/javascript" src="/static/explorerApp/js/vendor/es5-shim.js"></script>
+	 <script type="text/javascript" src="/static/explorerApp/js/vendor/html5shiv.js"></script>
+	 <script type="text/javascript" src="/static/explorerApp/js/vendor/augment.js"></script>
+	 <script type="text/javascript" src="/static/explorerApp/js/vendor/json3.min.js"></script>
+        <script>
+          document.createElement('ng-include');
+          document.createElement('ng-pluralize');
+          document.createElement('ng-view');
+          document.createElement('login-Toolbar');
+          document.createElement('alert');
+          document.createElement('ng-include');
+	      document.createElement('accordion');
+	      document.createElement('accordion-group');
+	      document.createElement('accordion-heading');
+	      document.createElement('ui-view');
+
+          // Optionally these for CSS
+          document.createElement('ng:include');
+          document.createElement('ng:pluralize');
+          document.createElement('ng:view');
+          // getComputedStyle
+        </script>
+      <![endif]-->
+</head>
+<body>
+
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand">ZERO</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+			</ul>
+		</div>
+	</nav>
+
+<!-- uiView:  --><div ui-view="" class="container view-frame ng-scope"><div class="row ng-scope">
+	<style>
+		.content {
+			overflow-y:auto;
+			height: 400px;
+		}
+
+		.choice {
+			background-color: rgba(59, 210, 135, 0.4);
+		}
+	</style>
+    <div class="col-md-4 col-xs-4">
+    	<div class="panel panel-default">
+		    <div class="clearfix panel-heading">
+		    	<h6 class="panel-title pull-left" style="font-size: 12px;padding-top:10px">
+		    		nyp_hybrid
+			    </h6>
+		    	<div class="btn-group pull-right">
+					<a class="btn btn-default" ng-click="userSelect(&#39;hybridized_provider_output&#39;)">Select  <i class="icon-thumbs-up"></i></a>
+				</div>
+	    	</div>
+	    	<div>
+				<pre style="font-size: 11px" ng-class="{&#39;choice&#39;: isSelectedObject[&#39;hybridized_provider_output&#39;]}" class="ng-binding choice">
+  "firstName": "George",
+  "lastName": "Shih",
+  "middleName": null,
+  "contactPreference": "email",
+  "email": 
+    "ges9006@med.cornell.edu"
+  ,
+  "faxNum": 
+    2127467834,
+    2127462674
+  ,
+  "officePhone": 
+    2127462561,
+    2127462523
+  ,
+  "mobilePhone": ,
+  "pagerNum": ,
+  "addresses": 
+    
+      "addrPostCode": "10038",
+      "locTypeCode": "New York",
+      "locName": null,
+      "addrLine1": "80 John Street, 5F",
+      "addrLine2": null,
+      "addrState": "NY",
+      "addrCity": "New York"
+    ,
+    
+      "addrPostCode": "100214870",
+      "locTypeCode": "NEW YORK",
+      "locName": "Practice Address",
+      "addrLine1": "525 E 68TH ST",
+      "addrLine2": "BOX 141",
+      "addrState": "NY",
+      "addrCity": "NEW YORK"
+    ,
+    
+      "addrPostCode": "10065",
+      "locTypeCode": "NEW YORK",
+      "locName": "Practice Address",
+      "addrLine1": "525 EAST 68TH STREET, L017B",
+      "addrLine2": "BOX 141",
+      "addrState": "NY",
+      "addrCity": "NEW YORK"
+    
+  
+</pre>
+			</div>
+		</div>
+    </div>
+    <div class="col-md-4 col-xs-4">
+    	<div class="panel panel-default">
+		    <div class="clearfix panel-heading">
+		    	<h6 class="panel-title pull-left" style="font-size: 12px;padding-top:10px">
+			    	nyp_match_metrix
+		    	</h6>
+		    	<div class="btn-group pull-right">
+					<a class="btn btn-default" ng-click="userSelect(&#39;match_metrix_provider_output&#39;)">Select  <i class="icon-thumbs-up"></i></a>
+				</div>
+	    	</div>
+	    	<div>
+				<pre style="font-size: 11px" ng-class="{&#39;choice&#39;: isSelectedObject[&#39;match_metrix_provider_output&#39;]}" class="ng-binding">
+  "firstName": "George",
+  "lastName": "Shih",
+  "middleName": null,
+  "contactPreference": "email",
+  "email": 
+    "ges9006@med.cornell.edu"
+  ,
+  "faxNum": 
+    2127467834,
+    2127462674
+  ,
+  "officePhone": 
+    2127462523,
+    2127462561
+  ,
+  "mobilePhone": ,
+  "pagerNum": ,
+  "addresses": 
+    
+      "addrPostCode": "10038",
+      "locTypeCode": "New York",
+      "locName": null,
+      "addrLine1": "80 John Street, 5F",
+      "addrLine2": null,
+      "addrState": "NY",
+      "addrCity": "New York"
+    ,
+    
+      "addrPostCode": "10065",
+      "locTypeCode": "NEW YORK",
+      "locName": "Business Mailing Address",
+      "addrLine1": "525 EAST 68TH STREET, L017B",
+      "addrLine2": "BOX 141",
+      "addrState": "NY",
+      "addrCity": "NEW YORK"
+    ,
+    
+      "addrPostCode": "100214870",
+      "locTypeCode": "NEW YORK",
+      "locName": "Business Mailing Address",
+      "addrLine1": "525 E 68TH ST",
+      "addrLine2": "BOX 141",
+      "addrState": "NY",
+      "addrCity": "NEW YORK"
+    ,
+    
+      "addrPostCode": "10065",
+      "locTypeCode": "New York",
+      "locName": "Weill Cornell Medical Center",
+      "addrLine1": "525 East 68th Street, L017B",
+      "addrLine2": "Box 141",
+      "addrState": "NY",
+      "addrCity": "New York"
+    ,
+    
+      "addrPostCode": "10065",
+      "locTypeCode": "NEW YORK",
+      "locName": "Practice Address",
+      "addrLine1": "525 EAST 68TH STREET, L017B",
+      "addrLine2": "BOX 141",
+      "addrState": "NY",
+      "addrCity": "NEW YORK"
+    ,
+    
+      "addrPostCode": "100214870",
+      "locTypeCode": "NEW YORK",
+      "locName": "Practice Address",
+      "addrLine1": "525 E 68TH ST",
+      "addrLine2": "BOX 141",
+      "addrState": "NY",
+      "addrCity": "NEW YORK"
+    
+  
+</pre>
+			</div>
+		</div>
+    </div>
+    <div class="col-md-4 col-xs-4">
+    	<div class="panel panel-default">
+		    <div class="clearfix panel-heading">
+		    	<h6 class="panel-title pull-left" style="font-size: 12px;padding-top:10px">
+		    		nyp_radiology
+			    </h6>
+		    	<div class="btn-group pull-right">
+					<a class="btn btn-default" ng-click="userSelect(&#39;referring_md_provider_output&#39;)">Select  <i class="icon-thumbs-up"></i></a>
+				</div>
+	    	</div>
+	    	<div>
+				<pre style="font-size: 11px" ng-class="{&#39;choice&#39;: isSelectedObject[&#39;referring_md_provider_output&#39;]}" class="ng-binding">
+  "firstName": "George",
+  "lastName": "Shih",
+  "middleName": null,
+  "contactPreference": "email",
+  "email": 
+    "ges9006@med.cornell.edu"
+  ,
+  "faxNum": ,
+  "officePhone": ,
+  "mobilePhone": ,
+  "pagerNum": ,
+  "addresses": 
+</pre>
+			</div>
+		</div>
+    </div>
+</div></div>
+	<script type="text/javascript" src="./zero_files/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="./zero_files/angular.js"></script>
+	<script type="text/javascript" src="./zero_files/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="./zero_files/angular-route.js"></script>
+	<script type="text/javascript" src="./zero_files/angular-cookies.js"></script>
+
+	<script type="text/javascript" src="./zero_files/ui-bootstrap-custom-tpls-0.10.0.js"></script>
+	<script type="text/javascript" src="./zero_files/select2.js"></script>
+	<script type="text/javascript" src="./zero_files/angular-select2.js"></script>
+	<script type="text/javascript" src="./zero_files/angular-touch.js"></script>
+
+	<script type="text/javascript" src="./zero_files/retryQueue.js"></script>
+	<script type="text/javascript" src="./zero_files/interceptor.js"></script>
+	<script type="text/javascript" src="./zero_files/authorization.js"></script>
+	<script type="text/javascript" src="./zero_files/security.js"></script>
+
+	<script type="text/javascript" src="./zero_files/blob.js"></script>
+	<script type="text/javascript" src="./zero_files/filesaver.js"></script>
+
+	<script type="text/javascript" src="./zero_files/main.js"></script>
+
+</body></html>

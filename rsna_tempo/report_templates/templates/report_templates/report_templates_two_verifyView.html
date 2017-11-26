@@ -1,0 +1,78 @@
+<div class="row">
+    <br/>
+    <div class="col-xs-4 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Parsed values from {[{ file_name }]}
+            </div>
+            <div class="panel-body">
+                <form role="form" class="well" ng-if="datablock_dictionary">
+                    <ul ng-repeat="(key, value) in datablock_dictionary">
+                        <li>{[{ key }]} : {[{ value }]}</li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+               Patient INFO from {[{ file_name }]}
+            </div>
+            <div class="panel-body">
+                <form role="form" class="well" ng-if="patient_dictionary">
+                    <ul ng-repeat="(key, value) in patient_dictionary">
+                        <li>{[{ key }]} : {[{ value }]}</li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+               User INFO from {[{ file_name }]}
+            </div>
+            <div class="panel-body">
+                <form role="form" class="well" ng-if="user_dictionary">
+                    <ul ng-repeat="(key, value) in user_dictionary">
+                        <li>{[{ key }]} : {[{ value }]}</li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+	</div>
+    <div style="word-wrap: break-word;" class="col-xs-8 col-md-8">
+        <div style="overflow-wrap:break-word;" class="panel panel-default">
+            <div class="panel-heading">
+                Select an Order associated with MRN: {[{ patient_dictionary['mrn'] }]} 
+            </div>
+            <div class="panel-body">
+                <img ng-show="loadingOrders" src="/static/reportTemplateApp/gif/loading.gif" alt="loading orders ..." style="width:30px;height:30px;" class="center-block">
+
+                <div ng-show="!loadingOrders" class="list-group center-block">
+                    <a ng-repeat="order in orders_from_mrn | limitTo:6" class="list-group-item" ng-click="select_order(order,$index)" ng-class="{active: order.selected}">
+                        <h4 class="list-group-item-heading">Accession: {[{ order.Accession }]}</h4>
+                        <p class="list-group-item-text">Procedure: {[{ order.Procedures }]}</p>
+                        <p class="list-group-item-text">OrderDate: {[{ order.OrderDate }]}</p>
+                        <p class="list-group-item-text">Status: {[{ order.Status }]}</p>
+                    </a>
+                </div> 
+            </div>
+        </div>
+        <div style="overflow-wrap:break-word;" ng-show="selected_order_from_mrn" class="panel panel-default">
+            <div class="panel-heading">
+                Select a Template
+            </div>
+            <div class="panel-body">
+                <select class="form-control" ng-model="templateName">
+                    <option ng-repeat="option in templateNames" values="{[{ option.fields.service_description }]]}">{[{ option.fields.service_description  }]}</option>
+                </select>
+            </div>
+            <p style="white-space: pre;">{[{ report_template }]}</p>
+        </div>
+        <form role="form" class="panel-body">
+            <div class="form-group">
+                <button class="btn btn-primary" ng-click = "go_back()">Back</button>
+                <button class="btn btn-primary" ng-show="templateName" ng-click = "combine()">Generate Report</button>
+            </div>
+            <response-Messages error="uploadError" msg="uploadMsg" success="uploadSuccess"></response-Messages>
+        </form>
+    </div>
+</div>

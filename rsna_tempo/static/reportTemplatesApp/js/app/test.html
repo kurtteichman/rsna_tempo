@@ -1,0 +1,25 @@
+<div>
+<div class="modal-header">
+<h3>Login</h3>
+</div>
+<div class="modal-body">
+<div class="alert alert-warning" ng-show="authReason">{{authReason}}</div>
+<div class="alert alert-error" ng-show="authError">{{authError}}</div>
+<div class="alert alert-info">Please enter your login details</div>
+<div class="container-fluid">
+<div class="input-group col-md-12 input-group-lg">
+<span class="input-group-addon"></span>
+<input type="text" ng-model="username" class="form-control" placeholder="Username"/>
+</div>
+<br>
+<div class="input-group col-md-12 input-group-lg">
+<span class="input-group-addon"></span>
+<input type="password" ng-model="password" class="form-control" placeholder="Password"/>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-primary" ng-click="login()">Sign in</button>
+<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+</div>

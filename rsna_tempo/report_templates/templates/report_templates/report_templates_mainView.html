@@ -1,0 +1,91 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="reportTemplatesApp">
+	<head> 
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="stylesheet" type="text/css" href="/static/reportTemplatesApp/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/reportTemplatesApp/css/bootstrap-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/reportTemplatesApp/css/select2.css">
+		<link rel="stylesheet" type="text/css" href="/static/reportTemplatesApp/css/select2-bootstrap.css">
+
+	</head>
+	<body ng-controller="mainViewCtrl" class="view-container">
+		<!--[if lte IE 9]>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/es5-shim.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/html5shiv.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/augment.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/json3.min.js"></script>
+			<script>
+			document.createElement('ng-include');
+			document.createElement('ng-pluralize');
+			document.createElement('ng-view');
+			document.createElement('login-Toolbar');
+			document.createElement('alert');
+			document.createElement('ng-include');
+			document.createElement('accordion');
+			document.createElement('accordion-group');
+			document.createElement('accordion-heading');
+			document.createElement('ui-view');
+
+			// Optionally these for CSS
+			document.createElement('ng:include');
+			document.createElement('ng:pluralize');
+			document.createElement('ng:view');
+			// getComputedStyle
+			</script>
+		<![endif]-->
+		<style>
+			.success {
+				color: #5cb85c
+			}
+		</style>
+
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand">IDEAL Tempo</a>
+			</div>
+
+			<p ng-show="isAuthenticated()" class="navbar-text pull-right">Logged in as {[{ security.currentUser.username }]}</p> 
+
+			<a href="#" ng-show="isAuthenticated()" ng-click="logout()" type="button" class="btn btn-default navbar-btn pull-right">
+				<span></span>Logout
+			</a>
+
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+				</ul>
+			</div>
+		</nav>
+		<div class="container"> 
+			<div class="row">
+				<div ng-show="$state.includes('report_template_one_upload') || $state.includes('report_template_two_verify') || $state.includes('report_template_three_powerscribe')" class="col-md-2 col-xs-2 col-md-offset-5 col-xs-offset-5">
+					<span class="glyphicon glyphicon-asterisk col-md-4 col-xs-4" ng-class="{success:$state.includes('report_template_one_upload')}"></span>
+					<span class="glyphicon glyphicon-asterisk col-md-4 col-xs-4" ng-class="{success:$state.includes('report_template_two_verify')}"></span>
+					<span class="glyphicon glyphicon-asterisk col-md-4 col-xs-4" ng-class="{success:$state.includes('report_template_three_powerscribe')}"></span>
+				</div>
+            </div>
+		</div>
+		<div ui-view class="container view-frame"></div>
+
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/cors_ajax_jquery.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/angular/angular.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/app/common/retryQueue.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/app/common/interceptor.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/app/common/authorization.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/app/common/security.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/angular-idle.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/select2/select2.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/select2/angular-select2.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/angular/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/angular/angular-route.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/underscore/underscore.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/angular/angular-sanitize.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/angular/angular-mocks.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/angular/angular-cookies.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/bootstrap/ui-bootstrap-custom-tpls-0.10.0.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/blob/blob.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/vendor/blob/filesaver.js"></script>
+		<script type="text/javascript" src="/static/reportTemplatesApp/js/app/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<div class="row">
+    <br/>
+    <div style="word-wrap: break-word;" class="col-xs-12 col-md-12">
+        <div class="col-md-6 col-xs-6">
+            <div style="overflow-wrap:break-word;" class="panel panel-default">
+                <div class="panel-heading">
+                User INFO from {[{ file_name }]}  
+                </div>
+                <div class="panel-body">
+                    <ul ng-repeat="(key, value) in user_dictionary">
+                        <li>{[{ key }]} : {[{ value }]}</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="overflow-wrap:break-word;" class="panel panel-default">
+                <div class="panel-heading">
+                    Patient INFO from {[{ file_name }]}
+                </div>
+                <div class="panel-body">
+                    <ul ng-repeat="(key, value) in patient_dictionary">
+                        <li>{[{ key }]} : {[{ value }]}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-6">
+            <div style="overflow-wrap:break-word;" class="panel panel-default">
+                <div class="panel-heading">
+                    Order INFO
+                </div>
+                <div class="panel-body">
+                    <ul ng-repeat="(key, value) in selected_order_from_mrn">
+                        <li>{[{ key }]} : {[{ value }]}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="word-wrap: break-word;" class="col-xs-12 col-md-12">
+        <div style="overflow-wrap:break-word;" class="panel panel-default">
+            <div class="panel-heading">
+                Report generated from file:{[{ file_name }]} and template:{[{ template_name }]}
+            </div>
+            <div class="panel-body">
+                  <p style="white-space: pre;">{[{ report }]}</p>
+            </div>
+        </div>
+        <form role="form" class="panel-body">
+            <div class="form-group">
+                <div class="col-md-6 col-xs-6">
+                    <button class="btn btn-primary pull-left" ng-click = "go_back()">Back</button>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                    <response-Messages error="submissionError" msg="submissionMsg" success="submissionSuccess"></response-Messages>
+                    <div class="input-group pull-right">
+                        <span class="input-group-addon" id="sizing-addon2">Accession</span>
+                        <input type="text" class="form-control" ng-readonly="true" placeholder="Accession" aria-describedby="sizing-addon2" ng-model="accession">
+
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" ng-click="submit_to_powerscribe()" ng-disabled="disable_submit" type="button">Submit to Powerscribe  </button><img ng-show="submitting" src="/static/reportTemplateApp/gif/loading.gif" alt="loading orders ..." style="width:30px;height:30px;">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
