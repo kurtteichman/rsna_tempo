@@ -47,7 +47,7 @@
                 <img ng-show="loadingOrders" src="/static/reportTemplateApp/gif/loading.gif" alt="loading orders ..." style="width:30px;height:30px;" class="center-block">
 
                 <div ng-show="!loadingOrders" class="list-group center-block">
-                    <a ng-repeat="order in orders_from_mrn | limitTo:6" class="list-group-item" ng-click="select_order(order,$index)" ng-class="{active: order.selected}">
+                    <a ng-repeat="order in orders_from_mrn | limitTo:10" class="list-group-item" ng-click="select_order(order,$index)" ng-class="{active: order.selected}">
                         <h4 class="list-group-item-heading">Accession: {[{ order.Accession }]}</h4>
                         <p class="list-group-item-text">Procedure: {[{ order.Procedures }]}</p>
                         <p class="list-group-item-text">OrderDate: {[{ order.OrderDate }]}</p>
