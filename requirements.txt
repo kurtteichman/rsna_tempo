@@ -32,6 +32,6 @@ six==1.11.0
 suds-jurko==0.6
 traitlets==4.3.2
 typing==3.6.2
-urllib3==1.22
+urllib3==1.26.5
 vine==1.1.4
 wcwidth==0.1.7
